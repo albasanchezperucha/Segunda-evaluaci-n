@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(void) {
+  int seed;
+  int aleatorio;
+  int cont;
+  int recuento[6];
+  int numero;
+  for(numero=0;numero<6;numero++){
+    recuento[cont]=0;
+
+  }
+
+  seed=time(0);
+  srand(seed);
+  for(cont=1;cont<=6000;cont++){
+    
+   aleatorio=rand()%6+1;
+   printf("\naleatorio= %d",aleatorio);
+   for(numero=1;numero<=6;numero++){
+     if(aleatorio==numero){
+       recuento[numero-1]++;
+     }
+   }
+  printf("\nRECUENTO");
+
+
+  }
+  for(numero=0;numero<6;numero++){
+    printf("\nEl %d ha salido %d",numero+1,recuento[numero]);
+  }
+  return 0;
+}
