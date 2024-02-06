@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int compare(const void *a, const void *b) {
+    return strlen(*(char **)b) - strlen(*(char **)a);
+}
+
+int main() {
+    char *palabras[10];
+    int i;
+    for (i = 0; i < 10; i++) {
+        palabras[i] = (char *)malloc(100 * sizeof(char));
+        printf("Ingrese una palabra: ");
+        scanf("%s", palabras[i]);
+    }
+
+    qsort(palabras, 10, sizeof(char *), compare);
+    printf("\nPalabras ordenadas por longitud de mayor a menor: \n");
+    for (i = 0; i < 10; i++) {
+        printf("%s\n", palabras[i]);
+    }
+
+    for (i = 0; i < 10; i++) {
+        free(palabras[i]);
+    }
+    return 0;
+}
