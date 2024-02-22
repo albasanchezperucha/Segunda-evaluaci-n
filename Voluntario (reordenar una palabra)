@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+void ordenarPalabra(char *palabra) {
+    int i, j, temp;
+    int n = strlen(palabra);
+
+    for(i = 0; i < n-1; i++) {
+        for(j = i+1; j < n; j++) {
+            if(palabra[i] > palabra[j]) {
+                temp = palabra[i];
+                palabra[i] = palabra[j];
+                palabra[j] = temp;
+            }
+        }
+    }
+}
+
+int main() {
+    char palabra[100];
+
+    printf("Ingrese una palabra: ");
+    scanf("%s", palabra);
+
+    ordenarPalabra(palabra);
+
+    printf("La palabra reordenada en orden alfabetico es: %s\n", palabra);
+
+    return 0;
+}
