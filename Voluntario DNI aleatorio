@@ -1,0 +1,10 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    srand(time(NULL));
+    int random_dni = rand() % 99999999 + 00000000;
+    printf("Número de DNI aleatorio generado: %d\n", random_dni);
+    return 0;
+}
